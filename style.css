@@ -1,14 +1,13 @@
 ﻿* { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; background: #120806; overflow: hidden; font-family: system-ui, sans-serif; }
-#scene, #room { width: 100%; height: 100%; display: block; }
+#scene { position: fixed; inset: 0; width: 100vw; height: 100vh; height: 100dvh; overflow: hidden; }
 
-/* Fill the screen keeping the aspect ratio; crop around the center */
-#room { object-fit: cover; object-position: center center; }
-
-/* Portrait screens: zoom into the central portion of the image */
-@media (orientation: portrait) {
-  #scene { overflow: hidden; }
-  #room { transform: scale(1.15); transform-origin: center center; }
+/* Fill the screen keeping the aspect ratio; crop around the center.
+   On portrait screens this zooms into the central portion of the image. */
+#room {
+  display: block; width: 100%; height: 100%;
+  max-width: none; max-height: none;
+  object-fit: cover; object-position: 50% 50%;
 }
 
 /* controls */
