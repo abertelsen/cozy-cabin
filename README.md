@@ -1,8 +1,8 @@
 # Cozy Winter Cabin
 
-An animated, endlessly looping winter cabin interior (crackling fire, falling snow, twinkling lights, a sleeping cat) with generative chillout music. Audio controls: play/pause and volume.
+A static, full-screen image of a cozy winter cabin interior (`assets/magnific_the-interior-of-a-cozy-ca_p85ufTZehw.png`) with generative chillout music. The music tries to autoplay on load; if the browser blocks it, it starts on the first click, key press or touch. Audio controls: play/pause and volume.
 
-Pure static site (HTML/CSS/JS). Music is synthesized in the browser with the Web Audio API, so there are no audio assets.
+Pure static site (HTML/CSS/JS). The only asset is the background image; music is synthesized in the browser with the Web Audio API, so there are no audio files.
 
 ## Run locally
 Open `index.html` in a browser, or run `python -m http.server`.
