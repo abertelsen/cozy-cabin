@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cozy Winter Cabin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="scene">
+    <svg id="room" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-label="Animated cozy winter cabin interior">
+      <defs>
+        <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#3b2415"/><stop offset="1" stop-color="#5a3820"/>
+        </linearGradient>
+        <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#4a2c17"/><stop offset="1" stop-color="#2a170b"/>
+        </linearGradient>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#0d1b3a"/><stop offset="1" stop-color="#2b4470"/>
+        </linearGradient>
+        <radialGradient id="fireGlow" cx="0.5" cy="0.6" r="0.6">
+          <stop offset="0" stop-color="#ffb347" stop-opacity="0.75"/>
+          <stop offset="1" stop-color="#ff6a00" stop-opacity="0"/>
+        </radialGradient>
+        <clipPath id="windowClip"><rect x="170" y="150" width="380" height="330"/></clipPath>
+      </defs>
+
+      <!-- wall with log lines -->
+      <rect width="1600" height="700" fill="url(#wall)"/>
+      <g stroke="#2a170b" stroke-width="3" opacity="0.6">
+        <line x1="0" y1="90" x2="1600" y2="90"/><line x1="0" y1="190" x2="1600" y2="190"/>
+        <line x1="0" y1="290" x2="1600" y2="290"/><line x1="0" y1="390" x2="1600" y2="390"/>
+        <line x1="0" y1="490" x2="1600" y2="490"/><line x1="0" y1="590" x2="1600" y2="590"/>
+      </g>
+      <!-- floor -->
+      <rect y="700" width="1600" height="200" fill="url(#floor)"/>
+      <ellipse cx="900" cy="800" rx="520" ry="70" fill="#7a2e2e"/>
+      <ellipse cx="900" cy="800" rx="460" ry="55" fill="#a04040"/>
+
+      <!-- window -->
+      <rect x="150" y="130" width="420" height="370" fill="#24140a"/>
+      <rect x="170" y="150" width="380" height="330" fill="url(#sky)"/>
+      <g clip-path="url(#windowClip)">
+        <circle cx="470" cy="215" r="28" fill="#f4f1de" opacity="0.9"/>
+        <path d="M170 430 Q300 380 420 425 T550 410 V480 H170Z" fill="#dfe9f5"/>
+        <g fill="#1b3a2b"><path d="M230 430 l30 -90 l30 90z"/><path d="M290 440 l25 -70 l25 70z"/></g>
+        <foreignObject x="170" y="150" width="380" height="330">
+          <canvas xmlns="http://www.w3.org/1999/xhtml" id="snow" width="380" height="330"></canvas>
+        </foreignObject>
+      </g>
+      <g stroke="#24140a" stroke-width="14"><line x1="360" y1="150" x2="360" y2="480"/><line x1="170" y1="315" x2="550" y2="315"/></g>
+      <rect x="140" y="490" width="440" height="18" fill="#3a2212"/>
+
+      <!-- fireplace -->
+      <g transform="translate(1000 250)">
+        <rect x="-20" y="-40" width="460" height="500" fill="#6b6b6b"/>
+        <g stroke="#4d4d4d" stroke-width="3" opacity="0.7">
+          <path d="M-20 60 H440 M-20 160 H440 M-20 260 H440 M-20 360 H440"/>
+        </g>
+        <rect x="-50" y="-70" width="520" height="40" fill="#3a2212"/>
+        <rect x="70" y="150" width="280" height="310" fill="#120806"/>
+        <ellipse id="glow" cx="210" cy="380" rx="420" ry="360" fill="url(#fireGlow)"/>
+        <!-- logs -->
+        <rect x="100" y="420" width="220" height="32" rx="14" fill="#4b2a14" transform="rotate(-4 210 436)"/>
+        <rect x="110" y="395" width="200" height="30" rx="14" fill="#5c3418" transform="rotate(5 210 410)"/>
+        <!-- flames -->
+        <g class="flames" transform="translate(210 410)">
+          <path class="flame f1" d="M-70 0 C-90 -60 -30 -90 -40 -150 C-10 -110 20 -80 0 0Z" fill="#ff6a00"/>
+          <path class="flame f2" d="M-10 0 C-30 -80 30 -120 20 -190 C60 -130 90 -70 60 0Z" fill="#ff8c1a"/>
+          <path class="flame f3" d="M-40 0 C-50 -40 -10 -70 -10 -110 C20 -70 40 -40 30 0Z" fill="#ffd04a"/>
+        </g>
+        <!-- stockings -->
+        <g><rect x="60" y="-26" width="8" height="20" fill="#3a2212"/>
+          <path class="sway" d="M64 -6 v60 q0 20 -25 20 q-15 0 -15 -15 l20 -3 v-62z" fill="#c0392b"/></g>
+        <g><rect x="360" y="-26" width="8" height="20" fill="#3a2212"/>
+          <path class="sway s2" d="M364 -6 v60 q0 20 -25 20 q-15 0 -15 -15 l20 -3 v-62z" fill="#2e7d4f"/></g>
+      </g>
+
+      <!-- armchair -->
+      <g transform="translate(720 520)">
+        <rect x="0" y="0" width="230" height="260" rx="40" fill="#8b3a3a"/>
+        <rect x="-30" y="120" width="60" height="150" rx="25" fill="#7a2f2f"/>
+        <rect x="200" y="120" width="60" height="150" rx="25" fill="#7a2f2f"/>
+        <rect x="10" y="170" width="210" height="100" rx="20" fill="#a34a4a"/>
+      </g>
+
+      <!-- cat on rug -->
+      <g id="cat" transform="translate(1180 770)">
+        <ellipse cx="0" cy="0" rx="70" ry="34" fill="#d98c3f"/>
+        <circle cx="-58" cy="-6" r="24" fill="#d98c3f"/>
+        <path d="M-72 -26 l6 -18 l12 14z M-52 -28 l10 -16 l6 18z" fill="#d98c3f"/>
+        <path d="M-70 -6 q6 4 12 0" stroke="#3a2212" stroke-width="3" fill="none"/>
+        <path d="M60 10 q40 10 20 -30" stroke="#d98c3f" stroke-width="14" fill="none" stroke-linecap="round"/>
+      </g>
+
+      <!-- mug + steam on table -->
+      <g transform="translate(640 690)">
+        <rect x="-40" y="10" width="140" height="14" fill="#3a2212"/>
+        <rect x="0" y="-30" width="40" height="40" rx="6" fill="#f0e6d2"/>
+        <path d="M40 -20 q18 0 14 14 q-2 8 -14 8" stroke="#f0e6d2" stroke-width="5" fill="none"/>
+        <g stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.5">
+          <path class="steam" d="M12 -36 q-8 -14 0 -26 q8 -14 0 -26"/>
+          <path class="steam st2" d="M28 -36 q-8 -14 0 -26 q8 -14 0 -26"/>
+        </g>
+      </g>
+
+      <!-- string lights -->
+      <path d="M0 40 Q200 110 400 40 T800 40 T1200 40 T1600 40" stroke="#1b1b1b" stroke-width="3" fill="none"/>
+      <g id="lights"></g>
+
+      <!-- warm overlay flicker -->
+      <rect id="warm" width="1600" height="900" fill="#ff8a1f" opacity="0.08"/>
+    </svg>
+  </div>
+
+  <div id="controls" role="group" aria-label="Music controls">
+    <button id="play" aria-label="Play music" title="Play / Pause">▶</button>
+    <input id="volume" type="range" min="0" max="1" step="0.01" value="0.5" aria-label="Volume" />
+  </div>
+
+  <script src="music.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
